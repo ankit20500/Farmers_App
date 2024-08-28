@@ -2,18 +2,19 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "Backend/index.js",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ankit20500/Farmers_App.git"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node/index.js",
+    "dev": "nodemon/index.js"
   },
   "author": "Ritik Kumar Choudhary",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ankit20500/Farmers_App/issues"
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
   },
-  "homepage": "https://github.com/ankit20500/Farmers_App#readme"
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
 }
