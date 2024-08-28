@@ -1,19 +1,29 @@
-// src/index.js
-const express = require('express');
-const dotenv = require('dotenv');
-
+// index.js
+import dotenv from 'dotenv'
+import app from "./app.js"
+import connectDB from "./DataBase.js"
 dotenv.config();
 
-const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(express.json());
+connectDB()
+    .then(() => {
+        process.on("uncaughtException", err => {
+            console.log(`error: ${err.message}`);
+            console.log("Shutting down the server due to uncaught Exception");
+            process.exit(1);
+        });
 
-// Sample route
-app.get('/', (req, res) => {
-    res.send('Hello, world!');
-});
+        app.listen(PORT, () => {
+            console.log(`server is starting on https://localhost:${PORT}`);
+        });
+    })
+    .catch(error => {
+        console.log("Mongodb connection failed ", error);
+    });
 
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+process.on("unhandledRejection", err => {
+    console.log(`error: ${err.message}`);
+    console.log("Shutting down the server due to some unhandled Rejection");
+    process.exit(1);
 });
