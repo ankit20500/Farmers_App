@@ -1,0 +1,19 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Backend/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ankit20500/Farmers_App.git"
+  },
+  "author": "Ritik Kumar Choudhary",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ankit20500/Farmers_App/issues"
+  },
+  "homepage": "https://github.com/ankit20500/Farmers_App#readme"
+}
